@@ -1,0 +1,289 @@
+{
+  "intents": [
+      {
+          "tag": "greeting",
+          "patterns": [
+              "How are you",
+              "Is anyone there?",
+              "Hello",
+              "Good day",
+              "Hi",
+              "Hey",
+              "What's up",
+              "Greetings"
+          ],
+          "responses": [
+              "Hello! How can I assist you today?",
+              "Hi there, how can I help you today?",
+              "Hello! What can I do for you today?",
+              "Hi, how may I assist you?"
+          ]
+      },
+      {
+          "tag": "goodbye",
+          "patterns": [
+              "Bye",
+              "See you later",
+              "Goodbye",
+              "Take care"
+          ],
+          "responses": [
+              "Goodbye! Have a nice day!",
+              "Take care! See you soon!",
+              "Bye! Come back soon!",
+              "See you later! Have a great day!"
+          ]
+      },
+      {
+          "tag": "lights_on",
+          "patterns": [
+              "Turn on the lights",
+              "Can you switch on the lights?",
+              "I want to light up the room",
+              "Can you turn on the light in the living room?",
+              "It's too dark here, can you turn on the light?"
+          ],
+          "responses": [
+              "Sure, turning on the lights.",
+              "The lights are on now.",
+              "As you wish, the lights are on.",
+              "Okay, the lights are on now.",
+              "Sure, I'm turning on the lights."
+          ]
+      },
+      {
+          "tag": "lights_off",
+          "patterns": [
+              "Turn off the lights",
+              "Can you switch off the lights?",
+              "I want to turn off the light in the bedroom",
+              "Can you turn off the light in the kitchen?",
+              "It's too bright here, can you turn off the light?"
+          ],
+          "responses": [
+              "Sure, turning off the lights.",
+              "The lights are off now.",
+              "As you wish, the lights are off.",
+              "Okay, the lights are off now.",
+              "Sure, I'm turning off the lights."
+          ]
+      },
+      {
+          "tag": "temperature",
+          "patterns": [
+              "What is the temperature in the living room?",
+              "Can you tell me the temperature in the bedroom?",
+              "What's the temperature inside?",
+              "How warm is it in here?",
+              "What's the current temperature?"
+          ],
+          "responses": [
+              "The temperature in the living room is 24 degrees Celsius.",
+              "The temperature in the bedroom is 21 degrees Celsius.",
+              "The current temperature is 22 degrees Celsius.",
+              "It's currently 23 degrees Celsius in here.",
+              "The temperature is 20 degrees Celsius at the moment."
+          ]
+      },
+      {
+        "tag": "humidity",
+        "patterns": ["what's the humidity", "what's the current humidity"],
+        "responses": ["The humidity is 40%.", "Currently, it's 35%."]
+  
+      },
+      {
+        "tag": "IncreaseBrightness",
+        "patterns": [
+          "Increase the brightness",
+          "Make the light brighter",
+          "Turn up the brightness"
+        ],
+        "responses": [ 
+          "Sure, increasing brightness.",
+         "The brightness is increasing now.",
+        "As you wish, the brightness is increasing.",
+        "Sure, I'm increasing the brightness."]
+      },
+      {
+        "tag": "DecreaseBrightness",
+        "patterns": [
+          "Decrease the brightness",
+          "Make the light dimmer",
+          "Turn down the brightness"
+        ],
+        "responses": [ 
+          "Sure, Decreasing brightness.",
+         "The brightness is Decreasing now.",
+        "As you wish, the brightness is Decreasing.",
+        "Sure, I'm Decreasing the brightness."]
+      },
+      {
+        "tag": "OpenDoor",
+        "patterns": [
+          "Open the door",
+          "Can you open the door?",
+          "Unlock the door"
+        ],
+        "responses": [
+          "the door is opend",
+          "sure i'm opening the door",
+          "the door is unlocked now"
+
+        ]
+      },
+      {
+        "tag": "CloseDoor",
+        "patterns": [
+          "Close the door",
+          "Can you close the door?",
+          "Lock the door"
+        ],
+        "responses":  [
+          "the door is closed",
+          "sure i'm closing the door",
+          "the door is locked now"
+
+        ]
+      },
+      {
+        "tag": "TurnOnAirConditioner",
+        "patterns": [
+          "Turn on the air conditioner",
+          "Can you turn on the AC?",
+          "Switch on the AC"
+        ],
+        "responses": [
+          "i'm turning on the air conditioner",
+          "the AC is turning on",
+          "the Ac is switched on"
+        ]
+      },
+      {
+        "tag": "TurnOffAirConditioner",
+        "patterns": [
+          "Turn off the air conditioner",
+          "Can you turn off the AC?",
+          "Switch off the AC"
+        ],
+        "responses":  [
+          "i'm turning off the air conditioner",
+          "the AC is turning off",
+          "the AC is switched off"
+        ]
+      },
+      {
+        "tag": "funny",
+        "patterns": [
+          "Tell me a joke!",
+          "Tell me something funny!",
+          "Do you know a joke?"
+        ],
+        "responses": [
+          "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+          "What did the buffalo say when his son left for college? Bison."
+        ]
+      },
+      {
+          "tag": "help",
+          "patterns": [
+              "I need help",
+              "Can you help me with something?",
+              "What can you do for me?"],
+              "responses": [
+                "I am a smart home chatbot assistant give me commands to controle your home and i will do it for you "
+              ]
+            },
+            {
+              "tag": "datetime",
+              "patterns": [
+                  "What is the time",
+                  "what is the date",
+                  "date",
+                  "time",
+                  "tell me the date","day","what day is is today"
+              ],
+              "responses": [
+                  "Date and Time"
+              ]
+          },
+          {
+            "tag": "haha",
+            "patterns": [
+                "haha",
+                "lol",
+                "rofl",
+                "lmao",
+                "thats funny"
+            ],
+            "responses": [
+                "Glad I could make you laugh !"
+            ]
+        },
+        {
+          "tag": "programmer",
+          "patterns": [
+              "Who made you",
+              "who designed you",
+              "who programmed you"
+          ],
+          "responses": [
+              "I was made esi sba students."
+          ]
+      },
+      {
+          "tag": "insult",
+          "patterns": [
+              
+              "you are dumb",
+              
+              "shut up",
+              "idiot"
+          ],
+          "responses": [
+              "Well that hurts :("
+          ]
+      },
+      {
+        "tag": "activity",
+        "patterns": [
+            "what are you doing",
+            "what are you upto"
+        ],
+        "responses": [
+            "Talking to you, of course!"
+        ]
+    },
+    {
+      "tag": "appreciate",
+      "patterns": [
+          "You are awesome",
+          "you are the best",
+          "you are great",
+          "you are good"
+      ],
+      "responses": [
+          "Thank you!"
+      ]
+  },
+  {
+    "tag": "suggest",
+    "patterns": [
+        "you are useless","useless","suggest","suggestions","you are bad"
+    ],
+    "responses": [
+        "Please mail your suggestions to suggestions@gmail.com. Thank you for helping me improve!"
+    ]
+},
+{
+  "tag": "age",
+  "patterns": [
+      "how old are you","when were you made","what is your age"
+  ],
+  "responses": [
+      "I was made in 2023, if that's what you are asking!"
+  ]
+}
+
+
+  ]
+}
