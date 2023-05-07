@@ -39,9 +39,29 @@
           "patterns": [
               "Turn on the lights",
               "Can you switch on the lights?",
-              "I want to light up the room",
-              "Can you turn on the light in the living room?",
-              "It's too dark here, can you turn on the light?"
+              "I want to light up ",
+              "Can you turn on the light ?",
+              "It's too dark here, can you turn on the light?",
+             "Switch on the lights",
+              "Power up the lights",
+             "Illuminate the room",
+              "Activate the lighting",
+             "Brighten the space",
+             "Light up the area",
+             "Flip the light switch",
+             "Press the light button",
+            "Start the lighting",
+            "Engage the light",
+            "Launch the lighting",
+            "Spark the lights",
+            "Ignite the lamps",
+            "Fire up the bulbs",
+            "Flood the room with light",
+            "Energize the illumination",
+            "Illuminate the surroundings",
+            "Turn the lights up",
+            "Activate the luminance"
+
           ],
           "responses": [
               "Sure, turning on the lights.",
@@ -51,14 +71,328 @@
               "Sure, I'm turning on the lights."
           ]
       },
+    {
+      "tag": "lights_on_kitchen",
+      "patterns": [
+        "Turn on the kitchen lights",
+"Can you switch on the lights in the kitchen?",
+"I want to light up the kitchen",
+"Can you turn on the light in the kitchen?",
+"It's too dark in the kitchen, can you turn on the light?",
+"Switch on the lights in the kitchen",
+"Power up the lights in the kitchen",
+"Illuminate the kitchen",
+"Activate the lighting in the kitchen",
+"Brighten up the kitchen",
+"Light up the kitchen area",
+"Flip the light switch in the kitchen",
+"Press the light button in the kitchen",
+"Start the lighting in the kitchen",
+"Engage the light in the kitchen",
+"Launch the lighting in the kitchen",
+"Spark the lights in the kitchen",
+"Ignite the lamps in the kitchen",
+"Fire up the bulbs in the kitchen",
+"Flood the kitchen with light",
+"Energize the illumination in the kitchen",
+"Illuminate the kitchen surroundings",
+"Turn the kitchen lights up",
+"Activate the luminance in the kitchen"
+
+      ],
+      "responses": [
+        "Sure, turning on the kitchen lights.",
+"The kitchen lights are on now.",
+"As you wish, the kitchen lights are on.",
+"Okay, the kitchen lights are on now.",
+"Sure, I'm turning on the kitchen lights."
+      ]
+    },
+    {
+      "tag": "lights_on_bedroom",
+"patterns": [
+"Turn on the lights in the bedroom",
+"Can you switch on the lights in the bedroom?",
+"I want to light up the bedroom",
+"Can you turn on the bedroom light?",
+"It's too dark in the bedroom, can you turn on the light?",
+"Switch on the lights in the bedroom",
+"Power up the lights in the bedroom",
+"Illuminate the bedroom",
+"Activate the lighting in the bedroom",
+"Brighten the bedroom",
+"Light up the bedroom",
+"Flip the bedroom light switch",
+"Press the bedroom light button",
+"Start the bedroom lighting",
+"Engage the bedroom light",
+"Launch the bedroom lighting",
+"Spark the bedroom lights",
+"Ignite the bedroom lamps",
+"Fire up the bedroom bulbs",
+"Flood the bedroom with light",
+"Energize the bedroom illumination",
+"Illuminate the bedroom surroundings",
+"Turn the bedroom lights up",
+"Activate the bedroom luminance"
+],
+"responses": [
+"Sure, turning on the lights in the bedroom.",
+"The lights in the bedroom are on now.",
+"As you wish, the lights in the bedroom are on.",
+"Okay, the bedroom lights are on now.",
+"Sure, I'm turning on the lights in the bedroom."
+]
+
+    },
+    {
+      "tag":"lights_on_diningroom",
+      "patterns": [
+        "Turn on the lights in the dining room.",
+"Can you switch on the lights in the dining room?",
+"I want to light up the dining room.",
+"Can you turn on the light in the dining room?",
+"It's too dark in the dining room, can you turn on the light?",
+"Switch on the lights in the dining room.",
+"Power up the lights in the dining room.",
+"Illuminate the dining room.",
+"Activate the lighting in the dining room.",
+"Brighten the dining room.",
+"Light up the dining room.",
+"Flip the light switch in the dining room.",
+"Press the light button in the dining room.",
+"Start the lighting in the dining room.",
+"Engage the light in the dining room.",
+"Launch the lighting in the dining room.",
+"Spark the lights in the dining room.",
+"Ignite the lamps in the dining room.",
+"Fire up the bulbs in the dining room.",
+"Flood the dining room with light.",
+"Energize the illumination in the dining room.",
+"Illuminate the surroundings in the dining room.",
+"Turn the lights up in the dining room.",
+"Activate the luminance in the dining room."
+
+      ],
+      "actions": [
+        "Sure, turning on the lights in the dining room.",
+"The lights are on in the dining room now.",
+"As you wish, the lights are on in the dining room.",
+"Okay, the lights in the dining room are on now.",
+"Sure, I'm turning on the lights in the dining room."
+      ]
+    },
+    {
+     "tag": "lights_on_hallway",
+    "patterns": [
+        "Turn on the lights in the hallway",
+        "Can you switch on the lights in the hallway?",
+        "I want to light up the hallway",
+        "Can you turn on the light in the hallway?",
+        "It's too dark in the hallway, can you turn on the light?",
+        "Switch on the lights in the hallway",
+        "Power up the lights in the hallway",
+        "Illuminate the hallway",
+        "Activate the lighting in the hallway",
+        "Brighten the hallway",
+        "Light up the hallway",
+        "Flip the light switch in the hallway",
+        "Press the light button in the hallway",
+        "Start the lighting in the hallway",
+        "Engage the light in the hallway",
+        "Launch the lighting in the hallway",
+        "Spark the lights in the hallway",
+        "Ignite the lamps in the hallway",
+        "Fire up the bulbs in the hallway",
+        "Flood the hallway with light",
+        "Energize the illumination in the hallway",
+        "Illuminate the hallway surroundings",
+        "Turn the lights up in the hallway",
+        "Activate the luminance in the hallway"
+    ],
+    "responses": [
+        "Sure, turning on the lights in the hallway.",
+        "The lights in the hallway are on now.",
+        "As you wish, the hallway lights are on.",
+        "Okay, the lights in the hallway are on now.",
+        "Sure, I'm turning on the lights in the hallway."
+    ]
+
+    },
+    {
+
+    "tag": "lights_on_livingroom",
+    "patterns": [
+        "Turn on the lights in the livingroom",
+        "Can you switch on the lights in the livingroom?",
+        "I want to light up the livingroom",
+        "Can you turn on the light in the livingroom?",
+        "It's too dark in the livingroom, can you turn on the light?",
+        "Switch on the lights in the livingroom",
+        "Power up the lights in the livingroom",
+        "Illuminate the livingroom",
+        "Activate the lighting in the livingroom",
+        "Brighten the livingroom",
+        "Light up the livingroom",
+        "Flip the light switch in the livingroom",
+        "Press the light button in the livingroom",
+        "Start the lighting in the livingroom",
+        "Engage the light in the livingroom",
+        "Launch the lighting in the livingroom",
+        "Spark the lights in the livingroom",
+        "Ignite the lamps in the livingroom",
+        "Fire up the bulbs in the livingroom",
+        "Flood the livingroom with light",
+        "Energize the illumination in the livingroom",
+        "Illuminate the surroundings in the livingroom",
+        "Turn the lights up in the livingroom",
+        "Activate the luminance in the livingroom"
+    ],
+    "responses": [
+        "Sure, turning on the lights in the living room.",
+        "The lights in the living room are on now.",
+        "As you wish, the lights in the living room are on.",
+        "Okay, the lights in the living room are on now.",
+        "Sure, I'm turning on the lights in the living room."
+    ]
+    },
+    {
+  "tag": "lights_on_bathroom",
+  "patterns": [
+    "Turn on the lights in the bathroom",
+    "Can you switch on the lights in the bathroom?",
+    "I want to light up the bathroom",
+    "Can you turn on the light in the bathroom?",
+    "It's too dark in the bathroom, can you turn on the light?",
+    "Switch on the lights in the bathroom",
+    "Power up the lights in the bathroom",
+    "Illuminate the bathroom",
+    "Activate the lighting in the bathroom",
+    "Brighten the bathroom",
+    "Light up the bathroom",
+    "Flip the light switch in the bathroom",
+    "Press the light button in the bathroom",
+    "Start the lighting in the bathroom",
+    "Engage the light in the bathroom",
+    "Launch the lighting in the bathroom",
+    "Spark the lights in the bathroom",
+    "Ignite the lamps in the bathroom",
+    "Fire up the bulbs in the bathroom",
+    "Flood the bathroom with light",
+    "Energize the illumination in the bathroom",
+    "Illuminate the surroundings in the bathroom",
+    "Turn the lights up in the bathroom",
+    "Activate the luminance in the bathroom"
+  ],
+  "responses": [
+    "Sure, turning on the lights in the bathroom.",
+    "The lights in the bathroom are on now.",
+    "As you wish, the lights in the bathroom are on.",
+    "Okay, the lights in the bathroom are on now.",
+    "Sure, I'm turning on the lights in the bathroom."
+  ]
+},
+    {
+    "tag": "lights_on_garage",
+    "patterns": [
+        "Turn on the lights in the garage",
+        "Can you switch on the lights in the garage?",
+        "I want to light up the garage",
+        "Can you turn on the light in the garage?",
+        "It's too dark in the garage, can you turn on the light?",
+        "Switch on the lights in the garage",
+        "Power up the lights in the garage",
+        "Illuminate the garage",
+        "Activate the lighting in the garage",
+        "Brighten the garage space",
+        "Light up the garage area",
+        "Flip the light switch in the garage",
+        "Press the light button in the garage",
+        "Start the lighting in the garage",
+        "Engage the light in the garage",
+        "Launch the lighting in the garage",
+        "Spark the lights in the garage",
+        "Ignite the lamps in the garage",
+        "Fire up the bulbs in the garage",
+        "Flood the garage with light",
+        "Energize the illumination in the garage",
+        "Illuminate the garage surroundings",
+        "Turn the lights up in the garage",
+        "Activate the luminance in the garage"
+    ],
+    "responses": [
+        "Sure, turning on the lights in the garage.",
+        "The lights in the garage are on now.",
+        "As you wish, the lights in the garage are on.",
+        "Okay, the lights in the garage are on now.",
+        "Sure, I'm turning on the lights in the garage."
+    ]
+},
+    {
+  "tag": "lights_on_kidsroom",
+  "patterns": [
+    "Turn on the lights in the kids room",
+    "Can you switch on the lights in the kids room?",
+    "I want to light up the kids room",
+    "Can you turn on the light in the kids room?",
+    "It's too dark in the kids room, can you turn on the light?",
+    "Switch on the lights in the kids room",
+    "Power up the lights in the kids room",
+    "Illuminate the kids room",
+    "Activate the lighting in the kids room",
+    "Brighten the kids room",
+    "Light up the kids room",
+    "Flip the light switch in the kids room",
+    "Press the light button in the kids room",
+    "Start the lighting in the kids room",
+    "Engage the light in the kids room",
+    "Launch the lighting in the kids room",
+    "Spark the lights in the kids room",
+    "Ignite the lamps in the kids room",
+    "Fire up the bulbs in the kids room",
+    "Flood the kids room with light",
+    "Energize the illumination in the kids room",
+    "Illuminate the surroundings in the kids room",
+    "Turn the lights up in the kids room",
+    "Activate the luminance in the kids room"
+  ],
+  "responses": [
+    "Sure, turning on the lights in the kids room.",
+    "The lights in the kids room are on now.",
+    "As you wish, the lights in the kids room are on.",
+    "Okay, the lights in the kids room are on now.",
+    "Sure, I'm turning on the lights in the kids room."
+  ]
+},
+
+
+
+
+
+
       {
           "tag": "lights_off",
           "patterns": [
               "Turn off the lights",
               "Can you switch off the lights?",
-              "I want to turn off the light in the bedroom",
-              "Can you turn off the light in the kitchen?",
-              "It's too bright here, can you turn off the light?"
+              "I want to turn off the light",
+              "Can you turn off the light ?",
+              "It's too bright here, can you turn off the light?",
+              "End the lighting",
+              "Toggle the light button down",
+              "Power down the lights",
+              "Darken the room",
+            "Shut down the lamps",
+            "Disengage the light",
+            "Deactivate the illumination",
+            "Extinguish the bulbs",
+            "Power off the lamps",
+            "Fade out the lighting",
+            "Douse the lights",
+            "Quench the luminance",
+            "Black out the area",
+            "Turn the lights down",
+            "Switch the lighting off"
           ],
           "responses": [
               "Sure, turning off the lights.",
@@ -68,27 +402,308 @@
               "Sure, I'm turning off the lights."
           ]
       },
+    {
+  "tag": "lights_off_kidsroom",
+  "patterns": [
+    "Turn off the lights in the kids room",
+    "Can you switch off the lights in the kids room?",
+    "I want to turn off the light in the kids room",
+    "Can you turn off the light in the kids room?",
+    "It's too bright in the kids room, can you turn off the light?",
+    "End the lighting in the kids room",
+    "Toggle the light button down in the kids room",
+    "Power down the lights in the kids room",
+    "Darken the kids room",
+    "Shut down the lamps in the kids room",
+    "Disengage the light in the kids room",
+    "Deactivate the illumination in the kids room",
+    "Extinguish the bulbs in the kids room",
+    "Power off the lamps in the kids room",
+    "Fade out the lighting in the kids room",
+    "Douse the lights in the kids room",
+    "Quench the luminance in the kids room",
+    "Black out the kids room",
+    "Turn the lights down in the kids room",
+    "Switch the lighting off in the kids room"
+  ],
+  "responses": [
+    "Sure, turning off the lights in the kids room.",
+    "The lights in the kids room are off now.",
+    "As you wish, the lights in the kids room are off.",
+    "Okay, the lights in the kids room are off now.",
+    "Sure, I'm turning off the lights in the kids room."
+  ]
+},
+    {
+  "tag": "lights_off_livingroom",
+  "patterns": [
+    "Turn off the lights in the living room",
+    "Can you switch off the lights in the living room?",
+    "I want to turn off the light in the living room",
+    "Can you turn off the light in the living room?",
+    "It's too bright in the living room, can you turn off the light?",
+    "End the lighting in the living room",
+    "Toggle the light button down in the living room",
+    "Power down the lights in the living room",
+    "Darken the living room",
+    "Shut down the lamps in the living room",
+    "Disengage the light in the living room",
+    "Deactivate the illumination in the living room",
+    "Extinguish the bulbs in the living room",
+    "Power off the lamps in the living room",
+    "Fade out the lighting in the living room",
+    "Douse the lights in the living room",
+    "Quench the luminance in the living room",
+    "Black out the living room",
+    "Turn the lights down in the living room",
+    "Switch the lighting off in the living room"
+  ],
+  "responses": [
+    "Sure, turning off the lights in the living room.",
+    "The lights in the living room are off now.",
+    "As you wish, the lights in the living room are off.",
+    "Okay, the lights in the living room are off now.",
+    "Sure, I'm turning off the lights in the living room."
+  ]
+},
+    {
+  "tag": "lights_off_bedroom",
+  "patterns": [
+    "Turn off the lights in the bedroom ",
+    "Can you switch off the lights in the bedroom ?",
+    "I want to turn off the light in the bedroom ",
+    "Can you turn off the light in the bedroom ?",
+    "It's too bright in the bedroom, can you turn off the light?",
+    "End the lighting in the bedroom",
+    "Toggle the light button down in the bedroom",
+    "Power down the lights in the bedroom",
+    "Darken the bedroom room",
+    "Shut down the lamps in the bedroom",
+    "Disengage the light in the bedroom",
+    "Deactivate the illumination in the bedroom",
+    "Extinguish the bulbs in the bedroom",
+    "Power off the lamps in the bedroom",
+    "Fade out the lighting in the bedroom",
+    "Douse the lights in the bedroom",
+    "Quench the luminance in the bedroom",
+    "Black out the area in the bedroom",
+    "Turn the lights down in the bedroom",
+    "Switch the lighting off in the bedroom"
+  ],
+  "responses": [
+    "Sure, turning off the lights in the bedroom.",
+    "The lights in the bedroom are off now.",
+    "As you wish, the lights in the bedroom are off.",
+    "Okay, the lights in the bedroom are off now.",
+    "Sure, I'm turning off the lights in the bedroom."
+  ]
+},
+    {
+  "tag": "lights_off_bathroom",
+  "patterns": [
+    "Turn off the lights in the bathroom",
+    "Can you switch off the lights in the bathroom?",
+    "I want to turn off the light in the bathroom",
+    "Can you turn off the light in the bathroom?",
+    "It's too bright in the bathroom, can you turn off the light?",
+    "End the lighting in the bathroom",
+    "Toggle the light button down in the bathroom",
+    "Power down the lights in the bathroom",
+    "Darken the bathroom",
+    "Shut down the lamps in the bathroom",
+    "Disengage the light in the bathroom",
+    "Deactivate the illumination in the bathroom",
+    "Extinguish the bulbs in the bathroom",
+    "Power off the lamps in the bathroom",
+    "Fade out the lighting in the bathroom",
+    "Douse the lights in the bathroom",
+    "Quench the luminance in the bathroom",
+    "Black out the area in the bathroom",
+    "Turn the lights down in the bathroom",
+    "Switch the lighting off in the bathroom"
+  ],
+  "responses": [
+    "Sure, turning off the lights in the bathroom.",
+    "The lights in the bathroom are off now.",
+    "As you wish, the lights in the bathroom are off.",
+    "Okay, the lights in the bathroom are off now.",
+    "Sure, I'm turning off the lights in the bathroom."
+  ]
+},
+    {
+  "tag": "lights_off_garage",
+  "patterns": [
+    "Turn off the lights in the garage",
+    "Can you switch off the lights in the garage?",
+    "I want to turn off the light in the garage",
+    "Can you turn off the light in the garage?",
+    "It's too bright in the garage, can you turn off the light?",
+    "End the lighting in the garage",
+    "Toggle the light button down in the garage",
+    "Power down the lights in the garage",
+    "Darken the garage",
+    "Shut down the lamps in the garage",
+    "Disengage the light in the garage",
+    "Deactivate the illumination in the garage",
+    "Extinguish the bulbs in the garage",
+    "Power off the lamps in the garage",
+    "Fade out the lighting in the garage",
+    "Douse the lights in the garage",
+    "Quench the luminance in the garage",
+    "Black out the area in the garage",
+    "Turn the lights down in the garage",
+    "Switch the lighting off in the garage"
+  ],
+  "responses": [
+    "Sure, turning off the lights in the garage.",
+    "The lights in the garage are off now.",
+    "As you wish, the lights in the garage are off.",
+    "Okay, the lights in the garage are off now.",
+    "Sure, I'm turning off the lights in the garage."
+  ]
+},
+    {
+  "tag": "lights_off_hallway",
+  "patterns": [
+    "Turn off the lights in the hallway",
+    "Can you switch off the lights in the hallway?",
+    "I want to turn off the light in the hallway",
+    "Can you turn off the light in the hallway?",
+    "It's too bright in the hallway, can you turn off the light?",
+    "End the lighting in the hallway",
+    "Toggle the light button down in the hallway",
+    "Power down the lights in the hallway",
+    "Darken the hallway",
+    "Shut down the lamps in the hallway",
+    "Disengage the light in the hallway",
+    "Deactivate the illumination in the hallway",
+    "Extinguish the bulbs in the hallway",
+    "Power off the lamps in the hallway",
+    "Fade out the lighting in the hallway",
+    "Douse the lights in the hallway",
+    "Quench the luminance in the hallway",
+    "Black out the area in the hallway",
+    "Turn the lights down in the hallway",
+    "Switch the lighting off in the hallway"
+  ],
+  "responses": [
+    "Sure, turning off the lights in the hallway.",
+    "The lights in the hallway are off now.",
+    "As you wish, the lights in the hallway are off.",
+    "Okay, the lights in the hallway are off now.",
+    "Sure, I'm turning off the lights in the hallway."
+  ]
+},
+    {
+  "tag": "lights_off_diningroom",
+  "patterns": [
+    "Turn off the lights in the dining room",
+    "Can you switch off the lights in the dining room?",
+    "I want to turn off the light in the dining room",
+    "Can you turn off the light in the dining room?",
+    "It's too bright in the dining room, can you turn off the light?",
+    "End the lighting in the dining room",
+    "Toggle the light button down in the dining room",
+    "Power down the lights in the dining room",
+    "Darken the dining room",
+    "Shut down the lamps in the dining room",
+    "Disengage the light in the dining room",
+    "Deactivate the illumination in the dining room",
+    "Extinguish the bulbs in the dining room",
+    "Power off the lamps in the dining room",
+    "Fade out the lighting in the dining room",
+    "Douse the lights in the dining room",
+    "Quench the luminance in the dining room",
+    "Black out the area in the dining room",
+    "Turn the lights down in the dining room",
+    "Switch the lighting off in the dining room"
+  ],
+  "responses": [
+    "Sure, turning off the lights in the dining room.",
+    "The lights in the dining room are off now.",
+    "As you wish, the lights in the dining room are off.",
+    "Okay, the lights in the dining room are off now.",
+    "Sure, I'm turning off the lights in the dining room."
+  ]
+},
+    {
+  "tag": "lights_off_kitchen",
+  "patterns": [
+    "Turn off the lights in the kitchen",
+    "Can you switch off the lights in the kitchen?",
+    "I want to turn off the light in the kitchen",
+    "Can you turn off the light in the kitchen?",
+    "It's too bright in the kitchen, can you turn off the light?",
+    "End the lighting in the kitchen",
+    "Toggle the light button down in the kitchen",
+    "Power down the lights in the kitchen",
+    "Darken the kitchen",
+    "Shut down the lamps in the kitchen",
+    "Disengage the light in the kitchen",
+    "Deactivate the illumination in the kitchen",
+    "Extinguish the bulbs in the kitchen",
+    "Power off the lamps in the kitchen",
+    "Fade out the lighting in the kitchen",
+    "Douse the lights in the kitchen",
+    "Quench the luminance in the kitchen",
+    "Black out the kitchen",
+    "Turn the lights down in the kitchen",
+    "Switch the lighting off in the kitchen"
+  ],
+  "responses": [
+    "Sure, turning off the lights in the kitchen.",
+    "The lights in the kitchen are off now.",
+    "As you wish, the lights in the kitchen are off.",
+    "Okay, the lights in the kitchen are off now.",
+    "Sure, I'm turning off the lights in the kitchen."
+  ]
+},
+
+
+
       {
           "tag": "temperature",
           "patterns": [
-              "What is the temperature in the living room?",
-              "Can you tell me the temperature in the bedroom?",
+              "What is the temperature ?",
+              "Can you tell me the temperature",
               "What's the temperature inside?",
               "How warm is it in here?",
-              "What's the current temperature?"
+              "What's the current temperature?",
+             "How hot/cold is it?",
+             "Is it warm or cold inside",
+            "could you detect the tempurature ",
+            "What's the temperature like today?",
+            "How many degrees is it?",
+            "What's the thermometer saying?",
+            "Is it hot or chilly inside",
+            "What's the temperature in here?",
+            "Can you check the temperature"
           ],
           "responses": [
-              "The temperature in the living room is 24 degrees Celsius.",
-              "The temperature in the bedroom is 21 degrees Celsius.",
-              "The current temperature is 22 degrees Celsius.",
-              "It's currently 23 degrees Celsius in here.",
-              "The temperature is 20 degrees Celsius at the moment."
+              "The temperature is: ",
+              "The current temperature is :",
+              "It's currently: ",
+              "The temperature at the moment is :"
           ]
       },
       {
         "tag": "humidity",
-        "patterns": ["what's the humidity", "what's the current humidity"],
-        "responses": ["The humidity is 40%.", "Currently, it's 35%."]
+        "patterns": [
+          "what's the humidity",
+          "what's the current humidity",
+          "What's the humidity like in here?",
+          "Can you check the humidity level?",
+          "could you detect the humidity ",
+          "How humid is it inside?",
+          "Is the air in the house dry or moist?",
+          "Can you tell me the current humidity?",
+          "What's the level of humidity today?",
+          "How much moisture is in the air?",
+          "What's the humidity reading?",
+          "Is the air in the house humid or arid?",
+          "How muggy is it inside?"
+        ],
+        "responses": ["The humidity is : ", "Currently, it's : "]
   
       },
       {
@@ -96,7 +711,14 @@
         "patterns": [
           "Increase the brightness",
           "Make the light brighter",
-          "Turn up the brightness"
+          "Turn up the brightness",
+          "Can you increase the brightness of this lamp?",
+          "Amplify the brightness of the LED lights.",
+          "Can you make it brighter?",
+          "Raise the level of illumination.",
+          "Can you make it a bit brighter?",
+          "Increase the luminance",
+          "Make it more radiant"
         ],
         "responses": [ 
           "Sure, increasing brightness.",
@@ -104,12 +726,188 @@
         "As you wish, the brightness is increasing.",
         "Sure, I'm increasing the brightness."]
       },
+    {
+  "tag": "IncreaseBrightness_kitchen",
+  "patterns": [
+    "Increase the brightness in the kitchen",
+    "Make the light brighter in the kitchen",
+    "Turn up the brightness in the kitchen",
+    "Can you increase the brightness of the kitchen lamp?",
+    "Amplify the brightness of the LED lights in the kitchen.",
+    "Can you make the kitchen brighter?",
+    "Raise the level of illumination in the kitchen.",
+    "Can you make the kitchen a bit brighter?",
+    "Increase the luminance in the kitchen",
+    "Make the kitchen more radiant"
+  ],
+  "responses": [
+    "Sure, increasing brightness in the kitchen.",
+    "The brightness in the kitchen is increasing now.",
+    "As you wish, the brightness in the kitchen is increasing.",
+    "Sure, I'm increasing the brightness in the kitchen."
+  ]
+},
+    {
+  "tag": "IncreaseBrightness_bedroom",
+  "patterns": [
+    "Increase the brightness in the bedroom",
+    "Make the light brighter in the bedroom",
+    "Turn up the brightness in the bedroom",
+    "Can you increase the brightness of this lamp in the bedroom?",
+    "Amplify the brightness of the LED lights in the bedroom.",
+    "Can you make it brighter in the bedroom?",
+    "Raise the level of illumination in the bedroom.",
+    "Can you make it a bit brighter in the bedroom?",
+    "Increase the luminance in the bedroom",
+    "Make it more radiant in the bedroom"
+  ],
+  "responses": [
+    "Sure, increasing brightness in the bedroom.",
+    "The brightness in the bedroom is increasing now.",
+    "As you wish, the brightness in the bedroom is increasing.",
+    "Sure, I'm increasing the brightness in the bedroom."
+  ]
+},
+    {
+  "tag": "IncreaseBrightness_livingroom",
+  "patterns": [
+    "Increase the brightness in the living room",
+    "Make the light brighter in the living room",
+    "Turn up the brightness in the living room",
+    "Can you increase the brightness of this lamp in the living room?",
+    "Amplify the brightness of the LED lights in the living room.",
+    "Can you make it brighter in the living room?",
+    "Raise the level of illumination in the living room.",
+    "Can you make it a bit brighter in the living room?",
+    "Increase the luminance in the living room",
+    "Make it more radiant in the living room"
+  ],
+  "responses": [
+    "Sure, increasing brightness in the living room.",
+    "The brightness in the living room is increasing now.",
+    "As you wish, the brightness in the living room is increasing.",
+    "Sure, I'm increasing the brightness in the living room."
+  ]
+},
+    {
+  "tag": "IncreaseBrightness_diningroom",
+  "patterns": [
+    "Increase the brightness in the dining room",
+    "Make the light brighter in the dining room",
+    "Turn up the brightness in the dining room",
+    "Can you increase the brightness of this lamp in the dining room?",
+    "Amplify the brightness of the LED lights in the dining room.",
+    "Can you make it brighter in the dining room?",
+    "Raise the level of illumination in the dining room.",
+    "Can you make it a bit brighter in the dining room?",
+    "Increase the luminance in the dining room",
+    "Make it more radiant in the dining room"
+  ],
+  "responses": [
+    "Sure, increasing brightness in the dining room.",
+    "The brightness in the dining room is increasing now.",
+    "As you wish, the brightness in the dining room is increasing.",
+    "Sure, I'm increasing the brightness in the dining room."
+  ]
+},
+    {
+  "tag": "IncreaseBrightness_kidsroom",
+  "patterns": [
+    "Increase the brightness in the kids room",
+    "Make the light brighter in the kids room",
+    "Turn up the brightness in the kids room",
+    "Can you increase the brightness of this lamp in the kids room?",
+    "Amplify the brightness of the LED lights in the kids room.",
+    "Can you make it brighter in the kids room?",
+    "Raise the level of illumination in the kids room.",
+    "Can you make it a bit brighter in the kids room?",
+    "Increase the luminance in the kids room",
+    "Make it more radiant in the kids room"
+  ],
+  "responses": [
+    "Sure, increasing brightness in the kids room.",
+    "The brightness in the kids room is increasing now.",
+    "As you wish, the brightness in the kids room is increasing.",
+    "Sure, I'm increasing the brightness in the kids room."
+  ]
+},
+    {
+  "tag": "IncreaseBrightness_hallway",
+  "patterns": [
+    "Increase the brightness in the hallway",
+    "Make the light brighter in the hallway",
+    "Turn up the brightness in the hallway",
+    "Can you increase the brightness of the hallway lamp?",
+    "Amplify the brightness of the LED lights in the hallway.",
+    "Can you make it brighter in the hallway?",
+    "Raise the level of illumination in the hallway.",
+    "Can you make it a bit brighter in the hallway?",
+    "Increase the luminance in the hallway",
+    "Make it more radiant in the hallway"
+  ],
+  "responses": [
+    "Sure, increasing brightness in the hallway.",
+    "The brightness in the hallway is increasing now.",
+    "As you wish, the brightness in the hallway is increasing.",
+    "Sure, I'm increasing the brightness in the hallway."
+  ]
+},
+    {
+  "tag": "IncreaseBrightness_garage",
+  "patterns": [
+    "Increase the brightness in the garage",
+    "Make the light brighter in the garage",
+    "Turn up the brightness in the garage",
+    "Can you increase the brightness of the lights in the garage?",
+    "Amplify the brightness of the LED lights in the garage.",
+    "Can you make it brighter in the garage?",
+    "Raise the level of illumination in the garage.",
+    "Can you make it a bit brighter in the garage?",
+    "Increase the luminance in the garage",
+    "Make it more radiant in the garage"
+  ],
+  "responses": [
+    "Sure, increasing brightness in the garage.",
+    "The brightness in the garage is increasing now.",
+    "As you wish, the brightness in the garage is increasing.",
+    "Sure, I'm increasing the brightness in the garage."
+  ]
+},
+    {
+  "tag": "IncreaseBrightness_bathroom",
+  "patterns": [
+    "Increase the brightness in the bathroom",
+    "Make the light brighter in the bathroom",
+    "Turn up the brightness in the bathroom",
+    "Can you increase the brightness of the lights in the bathroom?",
+    "Amplify the brightness of the LED lights in the bathroom.",
+    "Can you make it brighter in the bathroom?",
+    "Raise the level of illumination in the bathroom.",
+    "Can you make it a bit brighter in the bathroom?",
+    "Increase the luminance in the bathroom",
+    "Make it more radiant in the bathroom"
+  ],
+  "responses": [
+    "Sure, increasing brightness in the bathroom.",
+    "The brightness in the bathroom is increasing now.",
+    "As you wish, the brightness in the bathroom is increasing.",
+    "Sure, I'm increasing the brightness in the bathroom."
+  ]
+},
+
+
       {
         "tag": "DecreaseBrightness",
         "patterns": [
           "Decrease the brightness",
           "Make the light dimmer",
-          "Turn down the brightness"
+          "Turn down the brightness",
+          "Lower the brightness",
+          "Reduce the intensity of the light",
+          "Make the lights less bright",
+          "Decrease the luminosity",
+          "Lower the light level",
+          "Adjust the light to a lower setting"
         ],
         "responses": [ 
           "Sure, Decreasing brightness.",
@@ -117,15 +915,183 @@
         "As you wish, the brightness is Decreasing.",
         "Sure, I'm Decreasing the brightness."]
       },
+    {
+    "tag": "DecreaseBrightness_bathroom",
+    "patterns": [
+        "Decrease the brightness in the bathroom",
+        "Make the bathroom light dimmer",
+        "Turn down the brightness in the bathroom",
+        "Lower the brightness in the bathroom",
+        "Reduce the intensity of the bathroom light",
+        "Make the bathroom lights less bright",
+        "Decrease the luminosity in the bathroom",
+        "Lower the light level in the bathroom",
+        "Adjust the bathroom light to a lower setting"
+    ],
+    "responses": [
+        "Sure, Decreasing brightness in the bathroom.",
+        "The brightness in the bathroom is Decreasing now.",
+        "As you wish, the brightness in the bathroom is Decreasing.",
+        "Sure, I'm Decreasing the brightness in the bathroom."
+    ]
+},
+    {
+        "tag": "DecreaseBrightness_kitchen",
+        "patterns": [
+          "Decrease the brightness in the kitchen",
+          "Make the kitchen light dimmer",
+          "Turn down the brightness in the kitchen",
+          "Lower the brightness in the kitchen",
+          "Reduce the intensity of the kitchen light",
+          "Make the kitchen lights less bright",
+          "Decrease the luminosity in the kitchen",
+          "Lower the light level in the kitchen",
+          "Adjust the kitchen light to a lower setting"
+        ],
+        "responses": [
+          "Sure, decreasing brightness in the kitchen.",
+         "The kitchen light brightness is decreasing now.",
+        "As you wish, the kitchen light brightness is decreasing.",
+        "Sure, I'm decreasing the kitchen light brightness."]
+      },
+
+{
+"tag": "DecreaseBrightness_garage",
+"patterns": [
+"Decrease the brightness in the garage",
+"Make the light in the garage dimmer",
+"Turn down the brightness in the garage",
+"Lower the brightness of the garage lights",
+"Reduce the intensity of the garage light",
+"Make the lights in the garage less bright",
+"Decrease the luminosity of the garage light",
+"Lower the light level in the garage",
+"Adjust the light in the garage to a lower setting"
+],
+"responses": [
+"Sure, Decreasing brightness in the garage.",
+"The brightness in the garage is Decreasing now.",
+"As you wish, the brightness in the garage is Decreasing.",
+"Sure, I'm Decreasing the brightness in the garage."]
+},
+    {
+        "tag": "DecreaseBrightness_kidsroom",
+        "patterns": [
+          "Decrease the brightness in the kids room",
+          "Make the light dimmer in the kids room",
+          "Turn down the brightness in the kids room",
+          "Lower the brightness in the kids room",
+          "Reduce the intensity of the light in the kids room",
+          "Make the lights less bright in the kids room",
+          "Decrease the luminosity in the kids room",
+          "Lower the light level in the kids room",
+          "Adjust the light to a lower setting in the kids room"
+        ],
+        "responses": [
+          "Sure, Decreasing brightness in the kids room.",
+         "The brightness in the kids room is Decreasing now.",
+        "As you wish, the brightness in the kids room is Decreasing.",
+        "Sure, I'm Decreasing the brightness in the kids room."]
+      },
+    {
+"tag": "DecreaseBrightnessLivingRoom",
+"patterns": [
+"Decrease the brightness in the living room",
+"Make the living room lights dimmer",
+"Turn down the brightness in the living room",
+"Lower the brightness in the living room",
+"Reduce the intensity of the living room light",
+"Make the living room lights less bright",
+"Decrease the luminosity in the living room",
+"Lower the light level in the living room",
+"Adjust the living room light to a lower setting"
+],
+"responses": [
+"Sure, Decreasing brightness in the living room.",
+"The brightness in the living room is Decreasing now.",
+"As you wish, the brightness in the living room is Decreasing.",
+"Sure, I'm Decreasing the brightness in the living room."]
+},
+    {
+"tag": "DecreaseBrightness_diningroom",
+"patterns": [
+"Decrease the brightness in the dining room",
+"Make the light dimmer in the dining room",
+"Turn down the brightness in the dining room",
+"Lower the brightness in the dining room",
+"Reduce the intensity of the light in the dining room",
+"Make the lights less bright in the dining room",
+"Decrease the luminosity in the dining room",
+"Lower the light level in the dining room",
+"Adjust the light to a lower setting in the dining room"
+],
+"responses": [
+"Sure, Decreasing brightness in the dining room.",
+"The brightness in the dining room is Decreasing now.",
+"As you wish, the brightness in the dining room is Decreasing.",
+"Sure, I'm Decreasing the brightness in the dining room."]
+},
+    {
+"tag": "DecreaseBrightness_hallway",
+"patterns": [
+"Decrease the brightness in the hallway",
+"Make the light dimmer in the hallway",
+"Turn down the brightness in the hallway",
+"Lower the brightness in the hallway",
+"Reduce the intensity of the light in the hallway",
+"Make the lights less bright in the hallway",
+"Decrease the luminosity in the hallway",
+"Lower the light level in the hallway",
+"Adjust the light to a lower setting in the hallway"
+],
+"responses": [
+"Sure, Decreasing brightness in the hallway.",
+"The brightness in the hallway is Decreasing now.",
+"As you wish, the brightness in the hallway is Decreasing.",
+"Sure, I'm Decreasing the brightness in the hallway."]
+},
+    {
+"tag": "DecreaseBrightness_bedroom",
+"patterns": [
+"Decrease the brightness in the bedroom",
+"Make the light in the bedroom dimmer",
+"Turn down the brightness in the bedroom",
+"Lower the brightness in the bedroom",
+"Reduce the intensity of the light in the bedroom",
+"Make the lights in the bedroom less bright",
+"Decrease the luminosity in the bedroom",
+"Lower the light level in the bedroom",
+"Adjust the light in the bedroom to a lower setting"
+],
+"responses": [
+"Sure, Decreasing brightness in the bedroom.",
+"The brightness in the bedroom is Decreasing now.",
+"As you wish, the brightness in the bedroom is Decreasing.",
+"Sure, I'm Decreasing the brightness in the bedroom."]
+},
+
       {
         "tag": "OpenDoor",
         "patterns": [
           "Open the door",
+          "open door",
+          "opennnn door",
+          "open door please",
           "Can you open the door?",
-          "Unlock the door"
+          "Unlock the door",
+          "Can you please open the door?",
+          "Could you let me in?",
+          "Would you mind opening the door?",
+          "I need to get through, can you open the door?",
+          "Can you unlock the door for me?",
+          "Could you open the door for a moment?",
+          "Would you be able to let me inside?",
+          "Can you release the door lock?",
+          "Can you turn the doorknob and open the door?",
+          "Can you give me access by opening the door?"
         ],
         "responses": [
-          "the door is opend",
+          "the door is opened",
           "sure i'm opening the door",
           "the door is unlocked now"
 
@@ -136,7 +1102,17 @@
         "patterns": [
           "Close the door",
           "Can you close the door?",
-          "Lock the door"
+          "Lock the door",
+          "Can you please close the door?",
+          "Would you mind shutting the door?",
+          "Could you close the door for me?",
+          "Please close the door behind you",
+          "Make sure to close the door",
+          "The door needs to be closed, please.",
+          "Could you give the door a pull?",
+          "Can you latch the door, please?",
+          "Please make sure the door is closed.",
+          "Please close the door quietly"
         ],
         "responses":  [
           "the door is closed",
@@ -145,6 +1121,56 @@
 
         ]
       },
+    {
+        "tag": "OpenGarageDoor",
+        "patterns": [
+          "Open the garage door",
+          "opennnn door of the garage",
+          "Can you open the garage door?",
+          "Unlock the garage door",
+          "Can you please open the garage door?",
+          "Could you let me in through the garage?",
+          "Would you mind opening the garage door?",
+          "I need to get the car out, can you open the garage door?",
+          "Can you unlock the garage for me?",
+          "Could you open the garage for a moment?",
+          "Would you be able to let me inside through the garage?",
+          "Can you release the garage door lock?",
+          "Can you turn the garage doorknob and open the door?",
+          "Can you give me access by opening the garage door?"
+        ],
+        "responses": [
+          "the garage door is opening",
+          "sure i'm opening the garage door",
+          "the garage door is unlocked now"
+
+        ]
+      },
+      {
+        "tag": "CloseGarageDoor",
+        "patterns": [
+          "Close the garage door",
+          "Can you close the garage door?",
+          "Lock the garage door",
+          "Can you please close the garage door?",
+          "Would you mind shutting the garage door?",
+          "Could you close the garage door for me?",
+          "Please close the garage door behind you",
+          "Make sure to close the garage door",
+          "The garage door needs to be closed, please.",
+          "Could you give the garage door a pull?",
+          "Can you latch the garage door, please?",
+          "Please make sure the garage door is closed.",
+          "Please close the garage door quietly"
+        ],
+        "responses":  [
+          "the garage door is closing",
+          "sure i'm closing the garage door",
+          "the garage door is locked now"
+
+        ]
+      },
+
       {
         "tag": "TurnOnAirConditioner",
         "patterns": [
@@ -156,6 +1182,40 @@
           "i'm turning on the air conditioner",
           "the AC is turning on",
           "the Ac is switched on"
+        ]
+      },
+     {
+        "tag": "GazDetection",
+        "patterns": [
+          "What is the current CO2 level in the house?",
+          "Can you check the CO2 level?",
+          "Is the CO2 level within a healthy range?",
+          "How much CO2 is in the air right now?",
+          "Is the CO2 level too high or too low?",
+          "Can you show me the CO2 level?",
+          "Can you check the gaze?",
+          "Has the gaze detector detected anything?"
+
+        ],
+        "responses": [
+          "the co2 level in the house is : "
+        ]
+      },
+     {
+        "tag": "FireDetection",
+        "patterns": [
+          "Is there a smoke in the house?",
+          "Is the fire alarm system functional?",
+          "Is there a fire in the house?",
+          "test the fire alarms",
+          "Do you smell something burning?",
+          "Is there a fire in the house?",
+          "Can you see any flames?",
+          "Do you see any smoke?"
+
+        ],
+        "responses": [
+          "the current status is : "
         ]
       },
       {

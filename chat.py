@@ -1,104 +1,98 @@
 import random
 import json
-import time
 import torch
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
-import requests
+import threading
+import websocket
+import time
 
 
-# Set the IP address of the Wemos board
-wemos_ip = "192.168.0.164"
-
-# Set the pin nmr to which the smart led is connected
-led_pin = "D1"
+def on_message(ws, message):
+    print("Received: ", message)
 
 
-# Function to turn on the smart led
-def turn_on():
-    url = "http://" + wemos_ip + "/digital/" + led_pin + "/1"
-    try:
-        requests.get(url)
-    except requests.exceptions.RequestException as e:
-        print(e)
+def on_error(ws, error):
+    print(error)
 
 
-# Function to turn off the smart led
-def turn_off():
-    url = "http://" + wemos_ip + "/digital/" + led_pin + "/0"
-    try:
-        requests.get(url)
-    except:
-        print("An exception occurred")
+def on_close(ws):
+    print("WebSocket closed")
 
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+def on_open(ws):
+    def run(*args):
+        while True:
+            msg = ""
 
-with open('intents.json', 'r') as json_data:
-    intents = json.load(json_data)
+            device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-FILE = "data.pth"
-data = torch.load(FILE)
+            with open('intents.json', 'r') as json_data:
+                intents = json.load(json_data)
 
-input_size = data["input_size"]
-hidden_size = data["hidden_size"]
-output_size = data["output_size"]
-all_words = data['all_words']
-tags = data['tags']
-model_state = data["model_state"]
+            FILE = "data.pth"
+            data = torch.load(FILE)
 
-model = NeuralNet(input_size, hidden_size, output_size).to(device)
-model.load_state_dict(model_state)
-model.eval()
+            input_size = data["input_size"]
+            hidden_size = data["hidden_size"]
+            output_size = data["output_size"]
+            all_words = data['all_words']
+            tags = data['tags']
+            model_state = data["model_state"]
 
-bot_name = "Home"
-print("Let's chat! (type 'quit' to exit)")
-while True:
+            model = NeuralNet(input_size, hidden_size, output_size).to(device)
+            model.load_state_dict(model_state)
+            model.eval()
 
-    sentence = input("You: ")
-    if sentence == "quit":
-        break
+            bot_name = "Home"
+            print("Let's chat! (type 'quit' to exit)")
+            while True:
 
-    sentence = tokenize(sentence)
-    X = bag_of_words(sentence, all_words)
-    X = X.reshape(1, X.shape[0])
-    X = torch.from_numpy(X).to(device)
+                sentence = input("You: ")
+                if sentence == "quit":
+                    break
 
-    output = model(X)
-    _, predicted = torch.max(output, dim=1)
+                sentence = tokenize(sentence)
+                X = bag_of_words(sentence, all_words)
+                X = X.reshape(1, X.shape[0])
+                X = torch.from_numpy(X).to(device)
 
-    tag = tags[predicted.item()]
+                output = model(X)
+                _, predicted = torch.max(output, dim=1)
 
-    probs = torch.softmax(output, dim=1)
-    prob = probs[0][predicted.item()]
-    if prob.item() > 0.75:
-        for intent in intents['intents']:
-            if tag == intent["tag"]:
-                print(f"{bot_name}: {random.choice(intent['responses'])}")
-                # dispaly date and time
-                if tag == 'datetime':
-                    print(time.strftime("%A"))
-                    print(time.strftime("%D %B %Y"))
-                    print(time.strftime("%H:%M:%S"))
-                # turn on led
-                if tag == 'lights_on':
-                    turn_on()
-                # turn on led
-                if tag == 'lights_off':
-                    turn_off()
-                #read tempurature
-                if tag=='tempurature':
-                    pass
-                    #temperature=read_tempurature()
-                   # print("Humidity: {}%".format(humidity))
-                   # print("Temperature: {}°C".format(temperature))
-                # read humidity
-                if tag == 'humidity':
-                    pass
-                    #humidity = read_humidity()
-                    #print("Humidity: {}%".format(humidity))
+                tag = tags[predicted.item()]
 
+                probs = torch.softmax(output, dim=1)
+                prob = probs[0][predicted.item()]
+                if prob.item() > 0.7:
+                    for intent in intents['intents']:
+                        if tag == intent["tag"]:
+                            print(f"{bot_name}: {random.choice(intent['responses'])}")
+                            # dispaly date and time
+                            if tag == 'datetime':
+                                print(time.strftime("%A"))
+                                print(time.strftime("%D %B %Y"))
+                                print(time.strftime("%H:%M:%S"))
+                            msg = tag
+                            ws.send(msg)
+                            time.sleep(1)
+
+                else:
+                    print(f"{bot_name}: I do not understand...")
+
+            if msg == "quit":
+                break
+
+    # start a new thread to keep the WebSocket connection alive
+    thread = threading.Thread(target=run)
+    thread.daemon = True
+    thread.start()
 
 
-    else:
-        print(f"{bot_name}: I do not understand...")
+websocket.enableTrace(True)
+ws = websocket.WebSocketApp("ws://192.168.0.164:81/",
+                            on_message=on_message,
+                            on_error=on_error,
+                            on_close=on_close)
+ws.on_open = on_open
+ws.run_forever()
