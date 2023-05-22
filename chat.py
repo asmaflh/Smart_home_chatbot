@@ -5,6 +5,8 @@ import requests
 import random
 import json
 import torch
+import database
+from database import getIdUser
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 import threading
@@ -12,14 +14,17 @@ import websocket
 import time
 from translate import Translator
 from lingua import Language, LanguageDetectorBuilder
+from speech_recognition import UnknownValueError
 import speech_recognition as sr
+import soundfile
 
 
 def on_message(ws, message):
     print("Received from Wemos:", message)
-    tel_send_message(1668424135,message)
+    print("the currentid", database.currentId)
+    tel_send_message(database.currentId, message)
+
     return message
-    # Process the received message from the Wemos device and send a response to Telegram
 
 
 def on_error(ws, error):
@@ -60,10 +65,8 @@ app = Flask(__name__)
 def parse_message(message):
     print("message-->", message)
     chat_id = message['message']['chat']['id']
-    txt = message['message']['text']
     print("chat_id-->", chat_id)
-    print("txt-->", txt)
-    return chat_id, txt
+    return chat_id
 
 
 def tel_send_message(chat_id, text):
@@ -75,90 +78,112 @@ def tel_send_message(chat_id, text):
 
     r = requests.post(url, json=payload)
     return r
-ws = websocket.WebSocketApp("ws://192.168.0.164:81/",
-                                    on_message=on_message,
-                                    on_error=on_error,
-                                    on_close=on_close)
+
+
+ws = websocket.WebSocketApp("ws://192.168.147.96:81/",
+                            on_message=on_message,
+                            on_error=on_error,
+                            on_close=on_close)
 ws.on_open = on_open
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         msg = request.get_json()
-        chat_id, txt = parse_message(msg)
-        """
-           # Initialize recognizer class (for recognizing the speech)
-           r = sr.Recognizer()
-           # Reading Microphone as source
-           # listening the speech and store in audio_text variable
-           with sr.Microphone() as source:
-               print("Talk")
-               audio_text = r.listen(source)
-               print("Time over, thanks")
-               # recoginize_() method will throw a request error if the API is unreachable, hence using exception handling
-               try:
-                   # using google speech recognition
-                   sentence = r.recognize_google(audio_text)
-                   print("Text: " + r.recognize_google(audio_text))
-               except:
-                   print("Sorry, I did not get that")
+        chat_id = parse_message(msg)
+        txt = ""
+        response = ""
 
-       """
+        a, b = getIdUser()
+        if chat_id in b:
+            database.currentId = chat_id
+            if 'voice' in msg['message']:
+                file_id = msg['message']['voice']['file_id']
+                audio_url = f'https://api.telegram.org/bot{TOKEN}/getFile?file_id={file_id}'
+                response = requests.get(audio_url)
+                audio_file_path = response.json()['result']['file_path']
+                audio_content_url = f'https://api.telegram.org/file/bot{TOKEN}/{audio_file_path}'
+                audio_response = requests.get(audio_content_url)
 
-        sentence = txt
+                with open('audio.ogg', 'wb') as f:
+                    f.write(audio_response.content)
 
-        # detect language
-        languages = [Language.ENGLISH, Language.FRENCH, Language.ARABIC]
-        detector = LanguageDetectorBuilder.from_languages(*languages).build()
-        lang = detector.detect_language_of(sentence)
+                data, samplerate = soundfile.read('audio.ogg')
+                soundfile.write('new.wav', data, samplerate, subtype='PCM_16')
+                audio_file = "new.wav"
+                r = sr.Recognizer()
+                try:
+                    with sr.AudioFile(audio_file) as source:
+                        audio = r.record(source)  # Read the entire audio file
 
-        if lang == Language.FRENCH:
+                        # Perform speech recognition
+                        txt = r.recognize_google(audio)
+                        print("Recognized Text:")
+                        print(txt)
+                except UnknownValueError:
+                    tel_send_message(chat_id, "can't determine audio please speak again!")
+            elif 'text' in msg['message']:
+                txt = msg['message']['text']
+            else:
+                tel_send_message(chat_id, "can't process this type of data please enter your commande as text or voice")
 
-            translator = Translator(from_lang="fr", to_lang="en")
-            sentence = translator.translate(sentence)
-        elif lang == Language.ARABIC:
-            translator = Translator(from_lang="ar", to_lang="en")
-            sentence = translator.translate(sentence)
+            sentence = txt
 
-        sentence = tokenize(sentence)
-        X = bag_of_words(sentence, all_words)
-        X = X.reshape(1, X.shape[0])
-        X = torch.from_numpy(X).to(device)
+            # detect language
+            languages = [Language.ENGLISH, Language.FRENCH, Language.ARABIC]
+            detector = LanguageDetectorBuilder.from_languages(*languages).build()
+            lang = detector.detect_language_of(sentence)
 
-        output = model(X)
-        _, predicted = torch.max(output, dim=1)
+            if lang == Language.FRENCH:
 
-        tag = tags[predicted.item()]
+                translator = Translator(from_lang="fr", to_lang="en")
+                sentence = translator.translate(sentence)
+            elif lang == Language.ARABIC:
+                translator = Translator(from_lang="ar", to_lang="en")
+                sentence = translator.translate(sentence)
 
-        probs = torch.softmax(output, dim=1)
-        prob = probs[0][predicted.item()]
-        if prob.item() > 0.7:
-            for intent in intents['intents']:
-                if tag == intent["tag"]:
-                    response = random.choice(intent['responses'])
-                    if lang == Language.FRENCH:
-                        translator = Translator(from_lang="en", to_lang="fr")
-                        response = translator.translate(response)
+            sentence = tokenize(sentence)
+            X = bag_of_words(sentence, all_words)
+            X = X.reshape(1, X.shape[0])
+            X = torch.from_numpy(X).to(device)
 
-                    elif lang == Language.ARABIC:
-                        translator = Translator(from_lang="en", to_lang="ar")
-                        response = translator.translate(response)
+            output = model(X)
+            _, predicted = torch.max(output, dim=1)
 
-                    # dispaly date and time
-                    if tag == 'datetime':
-                        print(time.strftime("%A"))
-                        print(time.strftime("%D %B %Y"))
-                        print(time.strftime("%H:%M:%S"))
-                    tagg = tag
-                    ws.send(tagg)
-                    time.sleep(1)
+            tag = tags[predicted.item()]
 
+            probs = torch.softmax(output, dim=1)
+            prob = probs[0][predicted.item()]
+            if prob.item() > 0.7:
+                for intent in intents['intents']:
+                    if tag == intent["tag"]:
+                        response = random.choice(intent['responses'])
+                        if lang == Language.FRENCH:
+                            translator = Translator(from_lang="en", to_lang="fr")
+                            response = translator.translate(response)
+
+                        elif lang == Language.ARABIC:
+                            translator = Translator(from_lang="en", to_lang="ar")
+                            response = translator.translate(response)
+
+                        # dispaly date and time
+                        if tag == 'datetime':
+                            print(time.strftime("%A"))
+                            print(time.strftime("%D %B %Y"))
+                            print(time.strftime("%H:%M:%S"))
+                        tagg = tag
+                        ws.send(tagg)
+                        time.sleep(1)
+
+
+            else:
+                response = "I do not understand..."
+
+            tel_send_message(chat_id, response)
 
         else:
-            response = "I do not understand..."
-
-
-        tel_send_message(chat_id, response)
+            tel_send_message(chat_id, "you're not allowed to use this chat")
 
         return Response('ok', status=200)
     else:
@@ -168,8 +193,6 @@ def index():
 def wemos_connection_thread():
     websocket.enableTrace(True)
     ws.run_forever()
-
-
 
 
 wemos_thread = threading.Thread(target=wemos_connection_thread)
