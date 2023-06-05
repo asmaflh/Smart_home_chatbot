@@ -1,43 +1,19 @@
-from flask import Flask
-from flask import request
-from flask import Response
+from flask import Flask,request,Response
 import requests
 import random
 import json
 import torch
 import database
-from database import getIdUser
+from database import getIdUser, getIpAdress
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
-import threading
-import websocket
 import time
 from translate import Translator
 from lingua import Language, LanguageDetectorBuilder
 from speech_recognition import UnknownValueError
 import speech_recognition as sr
 import soundfile
-
-
-def on_message(ws, message):
-    print("Received from Wemos:", message)
-    print("the currentid", database.currentId)
-    tel_send_message(database.currentId, message)
-
-    return message
-
-
-def on_error(ws, error):
-    print(error)
-
-
-def on_close(ws):
-    print("WebSocket closed")
-
-
-def on_open(ws):
-    print("WebSocket connection established")
-
+import websocketFile as wb
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -80,13 +56,6 @@ def tel_send_message(chat_id, text):
     return r
 
 
-ws = websocket.WebSocketApp("ws://192.168.147.96:81/",
-                            on_message=on_message,
-                            on_error=on_error,
-                            on_close=on_close)
-ws.on_open = on_open
-
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -98,6 +67,8 @@ def index():
         a, b = getIdUser()
         if chat_id in b:
             database.currentId = chat_id
+            database.ip_adress, database.port = getIpAdress(chat_id)
+
             if 'voice' in msg['message']:
                 file_id = msg['message']['voice']['file_id']
                 audio_url = f'https://api.telegram.org/bot{TOKEN}/getFile?file_id={file_id}'
@@ -173,10 +144,7 @@ def index():
                             print(time.strftime("%D %B %Y"))
                             print(time.strftime("%H:%M:%S"))
                         tagg = tag
-                        ws.send(tagg)
-                        time.sleep(1)
-
-
+                        wb.Websocket(tagg)
             else:
                 response = "I do not understand..."
 
@@ -189,15 +157,6 @@ def index():
     else:
         return "<h1>Welcome!</h1>"
 
-
-def wemos_connection_thread():
-    websocket.enableTrace(True)
-    ws.run_forever()
-
-
-wemos_thread = threading.Thread(target=wemos_connection_thread)
-wemos_thread.daemon = True
-wemos_thread.start()
 
 if __name__ == '__main__':
     app.run(debug=True)

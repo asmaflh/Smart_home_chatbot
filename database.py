@@ -11,7 +11,11 @@ mydb = mysql.connector.connect(
 # Create cursor object
 mycursor = mydb.cursor()
 
-currentId=0
+currentId = 0
+ip_adress = ""
+port = ""
+
+
 def getIdUser():
     idFacebook = []
     idTelegram = []
@@ -26,10 +30,20 @@ def getIdUser():
         idTelegram.append(row[2])
         print('idFacebookUser : ', row[1])
         print('idTelegramUser : ', row[2])
-    return idFacebook,idTelegram
+    return idFacebook, idTelegram
 
 
-# if __name__ == "__main__":
+def getIpAdress(id):
+    # Execute SQL query
+    mycursor.execute("SELECT Ip,Port FROM client WHERE idTelegram='%s'" % id)
+    # Fetch all rows
+    row = mycursor.fetchone()
+    return row[0], row[1]
+
+
+if __name__ == "__main__":
+    getIdUser()
+    getIpAdress(1668424135)
 #     allowed, tel = getIdUser()
 #     if 1668424135 in tel:
 #         print("true")
