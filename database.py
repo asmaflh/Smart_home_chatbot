@@ -10,11 +10,9 @@ mydb = mysql.connector.connect(
 
 # Create cursor object
 mycursor = mydb.cursor()
-
-currentId = 0
 ip_adress = ""
 port = ""
-
+currentId=0
 
 def getIdUser():
     idFacebook = []

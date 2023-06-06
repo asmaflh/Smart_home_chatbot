@@ -1,19 +1,55 @@
-from flask import Flask,request,Response
+from flask import Flask, request, Response
 import requests
 import random
 import json
 import torch
-import database
 from database import getIdUser, getIpAdress
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
-import time
 from translate import Translator
 from lingua import Language, LanguageDetectorBuilder
 from speech_recognition import UnknownValueError
 import speech_recognition as sr
 import soundfile
-import websocketFile as wb
+import time
+import database
+import threading
+import websocket
+
+def on_message(ws, message):
+    print("Received from Wemos:", message)
+    tel_send_message(database.currentId, message)
+    ws.close()
+    return message
+def Websocket(tag):
+
+
+    def on_error(ws, error):
+        print(error)
+
+    def on_close(ws):
+        print("WebSocket closed")
+
+    def on_open(ws):
+        ws.send(tag)
+        time.sleep(1)
+
+        print("WebSocket connection established")
+
+    ws = websocket.WebSocketApp(f'ws://{database.ip_adress}:{database.port}/',
+                                on_message=on_message,
+                                on_error=on_error,
+                                on_close=on_close)
+    ws.on_open = on_open
+
+    def wemos_connection_thread():
+        websocket.enableTrace(True)
+        ws.run_forever()
+
+    wemos_thread = threading.Thread(target=wemos_connection_thread)
+    wemos_thread.daemon = True
+    wemos_thread.start()
+
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -58,12 +94,12 @@ def tel_send_message(chat_id, text):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    global wemos_msg
     if request.method == 'POST':
         msg = request.get_json()
         chat_id = parse_message(msg)
         txt = ""
         response = ""
-
         a, b = getIdUser()
         if chat_id in b:
             database.currentId = chat_id
@@ -144,7 +180,7 @@ def index():
                             print(time.strftime("%D %B %Y"))
                             print(time.strftime("%H:%M:%S"))
                         tagg = tag
-                        wb.Websocket(tagg)
+                        Websocket(tagg)
             else:
                 response = "I do not understand..."
 

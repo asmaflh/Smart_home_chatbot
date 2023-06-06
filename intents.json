@@ -1231,6 +1231,43 @@
           "the AC is switched off"
         ]
       },
+     {
+        "tag": "CloseValve",
+        "patterns": [
+          "Close the water valve",
+          "Turn off the valve for the water",
+          "Shut the water valve",
+          "Can you close the valve to stop the water flow?",
+          "Please turn the valve off",
+          "Is there a way to shut off the water valve?",
+          "I need to close the valve to stop the water",
+          "Can you twist the valve to close it?",
+          "Is there a handle or lever to shut off the water valve?",
+          "Can you seal the valve to stop the water from flowing?"
+        ],
+        "responses":  [
+          "The water valve is turned off"
+        ]
+      },
+    {
+        "tag": "OpenValve",
+        "patterns": [
+          "Open the water valve",
+          "Turn on the water supply",
+          "Open the valve to allow water flow",
+          "Can you please open the valve for me?",
+          "Please twist the valve to open it",
+           "Is there a way to start the water flow by opening the valve?",
+           "I need to turn on the water by opening the valve",
+          "Can you turn the valve counterclockwise to open it?",
+          "Is there a handle or lever to open the water valve?",
+          "Can you unseal the valve to allow water to flow?"
+        ],
+        "responses": [
+          "The water valve is turned on"
+
+        ]
+      },
       {
         "tag": "funny",
         "patterns": [
@@ -1342,7 +1379,30 @@
   "responses": [
       "I was made in 2023, if that's what you are asking!"
   ]
+},
+    {
+  "tag": "Thanks",
+  "patterns": [
+      "Thank you",
+      "Thanks a lot",
+      "I appreciate it",
+    "Thank you so much",
+    "I'm grateful",
+    "I'm thankful",
+    "I want to express my gratitude",
+    "I'm obliged",
+    "Many thanks",
+    "I owe you one"
+  ],
+  "responses": [
+    "it's my pleasure to help you!",
+    "i am here any time you need me!",
+    "that is my job mate!",
+    "no need"
+
+  ]
 }
+
 
 
   ]
