@@ -18,16 +18,16 @@ def getIdUser():
     idFacebook = []
     idTelegram = []
     # Execute SQL query
-    mycursor.execute("SELECT * FROM client")
+    mycursor.execute("SELECT idFacebook,idTelegram FROM client")
 
     # Fetch all rows
     rows = mycursor.fetchall()
     # Print rows
     for row in rows:
-        idFacebook.append(row[1])
-        idTelegram.append(row[2])
-        print('idFacebookUser : ', row[1])
-        print('idTelegramUser : ', row[2])
+        idFacebook.append(row[0])
+        idTelegram.append(row[1])
+        print('idFacebookUser : ', row[0])
+        print('idTelegramUser : ', row[1])
     return idFacebook, idTelegram
 
 
