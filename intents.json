@@ -38,6 +38,7 @@
           "tag": "lights_on",
           "patterns": [
               "Turn on the lights",
+               "led on",
               "Can you switch on the lights?",
               "I want to light up ",
               "Can you turn on the light ?",
@@ -74,6 +75,7 @@
     {
       "tag": "lights_on_kitchen",
       "patterns": [
+        "led on in the kitchen",
         "Turn on the kitchen lights",
 "Can you switch on the lights in the kitchen?",
 "I want to light up the kitchen",
@@ -111,6 +113,7 @@
     {
       "tag": "lights_on_bedroom",
 "patterns": [
+  "led on in the bedroom",
 "Turn on the lights in the bedroom",
 "Can you switch on the lights in the bedroom?",
 "I want to light up the bedroom",
@@ -148,6 +151,7 @@
     {
       "tag":"lights_on_diningroom",
       "patterns": [
+        "led on in the dining room",
         "Turn on the lights in the dining room.",
 "Can you switch on the lights in the dining room?",
 "I want to light up the dining room.",
@@ -185,6 +189,7 @@
     {
      "tag": "lights_on_hallway",
     "patterns": [
+      "led on in the hallway",
         "Turn on the lights in the hallway",
         "Can you switch on the lights in the hallway?",
         "I want to light up the hallway",
@@ -223,6 +228,7 @@
 
     "tag": "lights_on_livingroom",
     "patterns": [
+      "led on in the livingroom",
         "Turn on the lights in the livingroom",
         "Can you switch on the lights in the livingroom?",
         "I want to light up the livingroom",
@@ -259,6 +265,7 @@
     {
   "tag": "lights_on_bathroom",
   "patterns": [
+    "led on in the bathroom",
     "Turn on the lights in the bathroom",
     "Can you switch on the lights in the bathroom?",
     "I want to light up the bathroom",
@@ -295,6 +302,7 @@
     {
     "tag": "lights_on_garage",
     "patterns": [
+      "led on in the garage",
         "Turn on the lights in the garage",
         "Can you switch on the lights in the garage?",
         "I want to light up the garage",
@@ -331,6 +339,7 @@
     {
   "tag": "lights_on_kidsroom",
   "patterns": [
+    "led on in the kids room",
     "Turn on the lights in the kids room",
     "Can you switch on the lights in the kids room?",
     "I want to light up the kids room",
@@ -373,6 +382,7 @@
       {
           "tag": "lights_off",
           "patterns": [
+              "led off",
               "Turn off the lights",
               "Can you switch off the lights?",
               "I want to turn off the light",
@@ -405,6 +415,7 @@
     {
   "tag": "lights_off_kidsroom",
   "patterns": [
+    "led off in the kids room",
     "Turn off the lights in the kids room",
     "Can you switch off the lights in the kids room?",
     "I want to turn off the light in the kids room",
@@ -437,6 +448,7 @@
     {
   "tag": "lights_off_livingroom",
   "patterns": [
+     "led off in the living room",
     "Turn off the lights in the living room",
     "Can you switch off the lights in the living room?",
     "I want to turn off the light in the living room",
@@ -469,6 +481,7 @@
     {
   "tag": "lights_off_bedroom",
   "patterns": [
+     "led off in the bedroom",
     "Turn off the lights in the bedroom ",
     "Can you switch off the lights in the bedroom ?",
     "I want to turn off the light in the bedroom ",
@@ -501,6 +514,7 @@
     {
   "tag": "lights_off_bathroom",
   "patterns": [
+     "led off in the bathroom",
     "Turn off the lights in the bathroom",
     "Can you switch off the lights in the bathroom?",
     "I want to turn off the light in the bathroom",
@@ -533,6 +547,7 @@
     {
   "tag": "lights_off_garage",
   "patterns": [
+     "led off in the garage",
     "Turn off the lights in the garage",
     "Can you switch off the lights in the garage?",
     "I want to turn off the light in the garage",
@@ -565,6 +580,7 @@
     {
   "tag": "lights_off_hallway",
   "patterns": [
+     "led off in the hallway",
     "Turn off the lights in the hallway",
     "Can you switch off the lights in the hallway?",
     "I want to turn off the light in the hallway",
@@ -597,6 +613,7 @@
     {
   "tag": "lights_off_diningroom",
   "patterns": [
+     "led off in the dining room",
     "Turn off the lights in the dining room",
     "Can you switch off the lights in the dining room?",
     "I want to turn off the light in the dining room",
@@ -629,6 +646,7 @@
     {
   "tag": "lights_off_kitchen",
   "patterns": [
+     "led off in the kitchen",
     "Turn off the lights in the kitchen",
     "Can you switch off the lights in the kitchen?",
     "I want to turn off the light in the kitchen",
@@ -1174,9 +1192,16 @@
       {
         "tag": "TurnOnAirConditioner",
         "patterns": [
-          "Turn on the air conditioner",
-          "Can you turn on the AC?",
-          "Switch on the AC"
+          "Please turn on the air conditioner",
+          "Can you switch on the AC?",
+          "I want to start the air conditioner",
+          "Can you activate the cooling system?",
+          "It's hot in here, could you turn on the air conditioner?",
+          "I need some cool air, can you switch on the AC?",
+          "Start the air conditioning, please",
+          "Turn on the AC unit",
+          "Engage the air conditioner",
+          "Power up the cooling system"
         ],
         "responses": [
           "i'm turning on the air conditioner",
@@ -1193,8 +1218,8 @@
           "How much CO2 is in the air right now?",
           "Is the CO2 level too high or too low?",
           "Can you show me the CO2 level?",
-          "Can you check the gaze?",
-          "Has the gaze detector detected anything?"
+          "Can you check the gas?",
+          "Has the gas detector detected anything?"
 
         ],
         "responses": [
@@ -1221,9 +1246,16 @@
       {
         "tag": "TurnOffAirConditioner",
         "patterns": [
-          "Turn off the air conditioner",
-          "Can you turn off the AC?",
-          "Switch off the AC"
+          "Turn off the AC",
+          "Can you switch off the air conditioner?",
+         "Please turn off the AC",
+         "I want to turn off the air conditioning",
+         "Can you stop the air conditioner?",
+         "Deactivate the air conditioner",
+         "Shut down the AC",
+         "Power off the air conditioning unit",
+         "Turn the AC off",
+         "Disable the air conditioner"
         ],
         "responses":  [
           "i'm turning off the air conditioner",
