@@ -16,14 +16,15 @@ import database
 import threading
 import websocket
 
-def on_message(ws, message):
-    print("Received from Wemos:", message)
-    tel_send_message(database.currentId, message)
-    ws.close()
-    return message
+
+
+
 def Websocket(tag):
-
-
+    def on_message(ws, message):
+        print("Received from Wemos:", message)
+        time.sleep(2)
+        tel_send_message(database.currentId, message)
+        return message
     def on_error(ws, error):
         print(error)
 
@@ -49,6 +50,10 @@ def Websocket(tag):
     wemos_thread = threading.Thread(target=wemos_connection_thread)
     wemos_thread.daemon = True
     wemos_thread.start()
+    time.sleep(2)
+    ws.close()
+
+
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -181,6 +186,10 @@ def index():
                             print(time.strftime("%H:%M:%S"))
                         tagg = tag
                         Websocket(tagg)
+
+
+
+
             else:
                 response = "I do not understand..."
 
